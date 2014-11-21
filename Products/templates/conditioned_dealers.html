@@ -1,0 +1,28 @@
+<html>
+    <head>
+        <title>Add Stock</title>
+    </head>
+    <body bgcolor='pink'>
+        <font color='Green'><h1 align='center'> Your {{search}} Based Dealers Details </h1></font>
+        <form>
+            <table border=1 align='center'>
+                <tr align="center"><tr align="center"><td>Dealer_name</td><td>Company_name</td><td>Phone_number</td>
+                </tr>
+                {% for i in data %}
+                    <tr>
+                        <td><input type="text" value={{i.Dealer_name}} /></td>
+                        <td><input type="text" value={{i.Company_name}} /></td>
+                        <td><input type="text" value={{i.Phone_name}} /></td>
+                    </tr>
+                {% endfor %}
+                </table>            
+            <br><br>
+            <font align='center'>
+                <h4 align='center'>click <a href='/home/'>HERE</a> to redirect to Home page</h4>
+                <h4 align='center'>click <a href='/check_dealer_wise/'>HERE</a> to search with Dealer_name </h4>
+                <h4 align='center'>click <a href='/show_company_wise/'>HERE</a> to search with Company_name </h4>
+            </font>
+
+        </form>  
+    </body>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title>Untitled Document</title>
+</head>
+
+<body bgcolor="#99FFFF">
+<center><font color='green'><h3 align='center'>SRI LAKSHMI VENKATA RAMANA FERTILIZERS</h3>
+<h4>survey no 20/48, Duvvur</h4>
+<h4>Nandyala Main Road, Duvvur-516175</h4>
+<h4>Phone : +91-9441805415</h4></font></center>
+<hr/>
+<center><font color="red"><h3>CASH MEMO</h3>
+<h4>Date : {{date}} &nbsp;&nbsp;&nbsp;&nbsp;Time : {{time}}</h4>
+</font></center>
+<hr/>
+<form action="/add_stock_to_db/" method="POST">
+	{% csrf_token %}
+<center>
+<table align="center" style="height:20px; width:100px">
+<tr align="center"><td>Purchase_products</td><td>Net_weigth</td><td>Qty</td><td>Rate</td><td>Value</td></tr>
+{% for i in no_of_products %}
+<td><input type="text" name="product_name" /></td>
+<td><input type="text" name="net_weigth" /></td>
+<td><input type="text" name="qty" /></td>
+<td><input type="text" name="rate" /></td>
+<td><input type="text" name="value" /></td>
+</tr>
+{% endfor %}
+<br/><br/>
+</table>
+<hr/>
+<h5>Items : {{items}}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Qty : {{quantity}} &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Amount : {{amount}}</h5>
+<hr/>
+<h5> <---Amount Recieved From Customer---></h5>
+<hr/>
+<h5>Cash Received : {{amount}}</h5>
+<h5>Bal paid in cash : {{cash}}</h5>
+<hr/>
+<hr/>
+<h2>Thanks & Visit Again</h2>
+<br /><br /></center>
+<center><input align="center" type="submit" value="Print Bill"  /></a></center>
+</form>
+</body>
+</html>

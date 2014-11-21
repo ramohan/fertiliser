@@ -1,0 +1,32 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title>Untitled Document</title>
+</head>
+
+<body bgcolor="#99FFFF">
+<font color='green'><h1 align='center'>Sri Lakshmi Venkata Ramana Fertilizers</h1></font>
+<form action="/add_stock_to_db/" method="POST">
+	{% csrf_token %}
+<table align="center" style="height:20px; width:1200px" border="2">
+<th colspan="9" >Add New Stock </th>
+<tr align="center"><td>Batch_number</td><td>Product_name</td><td>Company_name</td><td>Manfacturing_date</td><td>Expire_date</td><td>Net_weigth</td><td>Price</td><td>Quantity</td><td>Remarks</td></tr>
+{% for i in no_of_items %}
+<tr><td><input type="text" name="batch_number" /></td>
+<td><input type="text" name="product_name" /></td>
+<td><input type="text" name="company_name" /></td>
+<td><input type="text" name="manfacturing_date" /></td>
+<td><input type="text" name="expire_date" /></td>
+<td><input type="text" name="net_weigth" /></td>
+<td><input type="text" name="price" /></td>
+<td><input type="text" name="quantity" /></td>
+<td><input type="text" name="remarks" /></td>
+</tr>
+{% endfor %}
+</table>
+<br /><br /><br />
+<input align="bottom" type="submit" value="ADD STOCK"  /></a>
+</form>
+</body>
+</html>
